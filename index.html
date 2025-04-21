@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mole Master ZM</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-blue-700 text-white p-4 text-center text-2xl font-bold">
+    Mole Master ZM - Grade 12 Past Papers
+  </header>
+
+  <main class="p-6 max-w-4xl mx-auto">
+    <section class="mb-6">
+      <input 
+        type="text" 
+        placeholder="Search year or keyword..."
+        class="w-full p-3 rounded border border-gray-300"
+        id="searchBox"
+        onkeyup="searchPapers()"
+      >
+    </section>
+
+    <section id="papersList" class="grid gap-4">
+      <!-- Sample paper -->
+      <a href="#" class="block p-4 bg-white rounded shadow hover:bg-blue-50">
+        2023 GCE Chemistry - Mole Concept Questions
+      </a>
+      <a href="#" class="block p-4 bg-white rounded shadow hover:bg-blue-50">
+        2022 School Certificate - Mole Calculations Section
+      </a>
+      <!-- Add more paper links here -->
+    </section>
+
+    <section class="mt-10">
+      <h2 class="text-xl font-semibold mb-2">Upload New Paper (PDF)</h2>
+      <input type="file" accept="application/pdf" class="block mb-4">
+      <button class="bg-blue-700 text-white px-4 py-2 rounded">Upload</button>
+    </section>
+  </main>
+
+  <footer class="bg-blue-700 text-white p-4 text-center mt-10">
+    &copy; 2025 Mole Master ZM
+  </footer>
+
+  <script>
+    function searchPapers() {
+      const query = document.getElementById('searchBox').value.toLowerCase();
+      const papers = document.querySelectorAll('#papersList a');
+      papers.forEach(paper => {
+        paper.style.display = paper.textContent.toLowerCase().includes(query) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
